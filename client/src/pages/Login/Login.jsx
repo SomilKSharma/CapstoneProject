@@ -1,11 +1,28 @@
 import React from 'react';
 import { Button, Form, Input } from 'antd';
+import { LoginUser } from '../../api/users';
+import { message } from 'antd';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
-  const onFinish = () => { }
+  const onFinish = async (values) => {
+    try {
+      const response = await LoginUser(values);
+      if (response.success) {
+        localStorage.setItem('token', response.token);
+        window.location.href = '/';
+        console.log(response);
+        message.success("user Logged in")
+      } else {
+        console.log(response.message);
+        message.error(response.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
