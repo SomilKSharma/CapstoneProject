@@ -54,9 +54,11 @@ function ProtectedRoute({ children }) {
   const getValidUser = async () => {
     try {
       const response = await GetCurrentUser();
-      setUser(response.data);
+      setUser(response?.data);
+      if (!response) navigate('/login');
     } catch (error) {
       message.error(error.message);
+      navigate('/login');
     }
   }
   useEffect(() => {

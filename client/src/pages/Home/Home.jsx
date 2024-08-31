@@ -12,7 +12,7 @@ function Home() {
     try {
       const response = await getAllMovies();
       if (response.success) {
-        setMovies(response.data);
+        setMovies(response?.data);
       } else {
         message.error(response.message);
       }

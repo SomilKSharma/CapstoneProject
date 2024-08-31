@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form, Input } from 'antd';
 import { LoginUser } from '../../api/users';
+import { GetCurrentUser } from '../../api/users';
 import { message } from 'antd';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -24,9 +25,10 @@ function Login() {
     }
   }
 
-  useEffect(() => {
+  useEffect(async () => {
     if (localStorage.getItem('token')) {
-      navigate("/");
+      const response = await GetCurrentUser();
+      if (response) navigate("/");
     }
   }, []);
 
