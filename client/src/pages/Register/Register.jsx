@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form, Input, message } from 'antd';
 import { RegisterUser } from '../../api/users';
+import { GetCurrentUser } from '../../api/users';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
@@ -23,9 +24,10 @@ function Register() {
     }
   }
 
-  useEffect(() => {
+  useEffect(async () => {
     if (localStorage.getItem('token')) {
-      navigate("/");
+      const response = await GetCurrentUser();
+      if (response) navigate("/");
     }
   }, []);
 
