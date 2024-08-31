@@ -36,7 +36,7 @@ router.get('/get-all-movies', async (_req, res) => {
 
 router.put('/update-movie', async (req, res) => {
   try {
-    const movie = await Movie.findByIdAndUpdate(req.body.movieId, req.body);
+    await Movie.findByIdAndUpdate(req.body.movieId, req.body);
     const updateMovie = await Movie.findById(req.body.movieId);
     res.send({
       success: true,
