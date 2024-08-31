@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/userModel");
+const bcrypt = require('bcrypt');
 
 router.post('/register', async (req, res) => {
   try {
@@ -13,6 +14,10 @@ router.post('/register', async (req, res) => {
       });
       return;
     }
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    req.body.password = hashedPassword;
 
     const newUser = await User(req.body);
     await newUser.save();
@@ -38,6 +43,16 @@ router.post('/login', async (req, res) => {
         success: false,
         message: "User does not exist"
       })
+    }
+
+    const validPassword = await bcrypt.compare(req.body.password, user.password);
+
+    if (!validPassword) {
+      res.send({
+        success: false,
+        message: "Invalid password"
+      })
+      return;
     }
 
     res.send({
