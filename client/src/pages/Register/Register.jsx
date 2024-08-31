@@ -19,8 +19,7 @@ function Register() {
         message.error(response.message);
       }
     } catch (error) {
-      console.error('Registration error:', error);
-      message.error('Registration failed. Please try again.');
+      message.error('Failed. Try again.');
     }
   }
 
@@ -36,7 +35,7 @@ function Register() {
       <main className="main-area mw-500 text-center px-3">
         <section className="left-section">
           <h1>
-            Register to BookMyShow
+            Register
           </h1>
         </section>
         <section className="right-section">
