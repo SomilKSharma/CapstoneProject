@@ -30,7 +30,6 @@ function Home() {
     <div>
       <h1>Movies</h1>
       <Row
-        className="justify-content-center"
         gutter={{
           xs: 8,
           sm: 16,
@@ -42,7 +41,6 @@ function Home() {
           movies.map((movie) => {
             return (
               <Col
-                className="gutter-row mb-5"
                 key={movie._id}
                 span={{
                   xs: 24,
@@ -51,9 +49,8 @@ function Home() {
                   lg: 10,
                 }}
               >
-                <div className="text-center">
+                <div>
                   <img
-                    className="cursor-pointer"
                     src={movie.poster}
                     alt="Movie Poster"
                     width={200}
@@ -66,9 +63,7 @@ function Home() {
                       );
                     }}
                   />
-                  <h3
-                    className="cursor-pointer"
-                  >
+                  <h3>
                     {movie.title}
                   </h3>
 

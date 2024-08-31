@@ -27,7 +27,7 @@ function MovieList() {
     {
       title: "Poster",
       dataIndex: "poster",
-      render: (text, data) => {
+      render: (_text, data) => {
         return (
           <img src={data.poster} width="75" height="115" />
         )
@@ -68,7 +68,7 @@ function MovieList() {
 
   return (
     <>
-      <div className="d-flex justify-content-end">
+      <div>
         <Button
           onClick={() => {
             setIsModalOpen(true);

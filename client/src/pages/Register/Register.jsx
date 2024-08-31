@@ -31,14 +31,14 @@ function Register() {
   }, []);
 
   return (
-    <header className="App-header">
-      <main className="main-area mw-500 text-center px-3">
-        <section className="left-section">
+    <header>
+      <main>
+        <section>
           <h1>
             Register
           </h1>
         </section>
-        <section className="right-section">
+        <section>
           <Form
             layout='vertical'
             onFinish={onFinish}
@@ -47,7 +47,6 @@ function Register() {
               label="Name"
               htmlFor="name"
               name="name"
-              className="d-block"
               rules={[{ required: true, message: "Name is required" }]}
             >
               <Input
@@ -60,7 +59,6 @@ function Register() {
               label="Email"
               htmlFor="email"
               name="email"
-              className="d-block"
               rules={[{ required: true, message: "Email is required" }]}
             >
               <Input
@@ -73,7 +71,6 @@ function Register() {
               label="Password"
               htmlFor="password"
               name="password"
-              className="d-block"
               rules={[{ required: true, message: "Password is required" }]}
             >
               <Input
@@ -82,7 +79,7 @@ function Register() {
                 placeholder="Enter your Password"
               ></Input>
             </Form.Item>
-            <Form.Item className="d-block">
+            <Form.Item>
               <Button
                 type="primary"
                 block

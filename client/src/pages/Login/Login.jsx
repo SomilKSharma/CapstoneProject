@@ -34,14 +34,14 @@ function Login() {
 
 
   return (
-    <header className="App-header">
-      <main className="main-area mw-500 text-center px-3">
-        <section className="left-section">
+    <header>
+      <main>
+        <section>
           <h1>
             Login to BookMyShow
           </h1>
         </section>
-        <section className="right-section">
+        <section>
           <Form
             layout='vertical'
             onFinish={onFinish}
@@ -50,7 +50,6 @@ function Login() {
               label="Email"
               htmlFor="email"
               name="email"
-              className="d-block"
               rules={[{ required: true, message: "Email is required" }]}
             >
               <Input
@@ -63,7 +62,6 @@ function Login() {
               label="Password"
               htmlFor="password"
               name="password"
-              className="d-block"
               rules={[{ required: true, message: "Password is required" }]}
             >
               <Input
@@ -73,7 +71,7 @@ function Login() {
 
               ></Input>
             </Form.Item>
-            <Form.Item className="d-block">
+            <Form.Item>
               <Button
                 type="primary"
                 block

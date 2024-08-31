@@ -73,7 +73,6 @@ function ProtectedRoute({ children }) {
     <>
       <Layout>
         <Header
-          className="d-flex justify-content-between"
           style={{
             position: "sticky",
             top: 0,
@@ -83,7 +82,7 @@ function ProtectedRoute({ children }) {
             alignItems: "center",
           }}
         >
-          <h3 className="demo-logo text-white m-0" style={{ color: "white" }}>
+          <h3 style={{ color: "white" }}>
             Book My Show
           </h3>
           <Menu theme="dark" mode="horizontal" items={navItems} />

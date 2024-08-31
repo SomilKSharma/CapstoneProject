@@ -84,7 +84,7 @@ const TheatresTable = () => {
       dataIndex: 'action',
       render: (text, data) => {
         return (
-          <div className='d-flex align-items-center gap-10'>
+          <div>
             {data.isActive ? <Button onClick={() => handleStatusChange(data)}>Block</Button> : <Button onClick={() => handleStatusChange(data)}>Approve</Button>}
           </div>
         )

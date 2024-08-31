@@ -44,7 +44,6 @@ function MovieForm({ isModalOpen, setIsModalOpen }) {
               label="Movie Name"
               htmlFor="title"
               name="title"
-              className="d-block"
               rules={[{ required: true, message: "Movie name is required!" }]}
             >
               <Input
@@ -59,7 +58,6 @@ function MovieForm({ isModalOpen, setIsModalOpen }) {
               label="Description"
               htmlFor="description"
               name="description"
-              className="d-block"
               rules={[{ required: true, message: "Description is required!" }]}
             >
               <TextArea
@@ -83,7 +81,6 @@ function MovieForm({ isModalOpen, setIsModalOpen }) {
                   label="Movie  Duration (in min)"
                   htmlFor="duration"
                   name="duration"
-                  className="d-block"
                   rules={[
                     { required: true, message: "Movie duration  is required!" },
                   ]}
@@ -100,7 +97,6 @@ function MovieForm({ isModalOpen, setIsModalOpen }) {
                   label="Select Movie Lanuage"
                   htmlFor="language"
                   name="language"
-                  className="d-block"
                   rules={[
                     { required: true, message: "Movie language  is required!" },
                   ]}
@@ -126,7 +122,6 @@ function MovieForm({ isModalOpen, setIsModalOpen }) {
                   label="Release Date"
                   htmlFor="releaseDate"
                   name="releaseDate"
-                  className="d-block"
                   rules={[
                     {
                       required: true,
@@ -157,7 +152,6 @@ function MovieForm({ isModalOpen, setIsModalOpen }) {
                   label="Select Movie Genre"
                   htmlFor="genre"
                   name="genre"
-                  className="d-block"
                   rules={[
                     { required: true, message: "Movie genre  is required!" },
                   ]}
@@ -184,7 +178,6 @@ function MovieForm({ isModalOpen, setIsModalOpen }) {
                   label="Poster  URL"
                   htmlFor="poster"
                   name="poster"
-                  className="d-block"
                   rules={[
                     { required: true, message: "Movie Poster  is required!" },
                   ]}
@@ -208,7 +201,7 @@ function MovieForm({ isModalOpen, setIsModalOpen }) {
           >
             Submit the Data
           </Button>
-          <Button className="mt-3" block onClick={handleCancel}>
+          <Button block onClick={handleCancel}>
             Cancel
           </Button>
         </Form.Item>
