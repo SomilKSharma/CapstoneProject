@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/userModel");
+const middleware = require("../middlewares/middleware");
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 
@@ -34,6 +35,16 @@ router.post('/register', async (req, res) => {
       message: err
     })
   }
+})
+
+router.get('/get-current-user', middleware, async (req, res) => {
+  const user = await User.findById(req.body.userId).select("-password");
+  res.send({
+    success: true,
+    message: "You are authorised",
+    data: user
+  });
+
 })
 
 router.post('/login', async (req, res) => {

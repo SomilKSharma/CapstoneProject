@@ -18,7 +18,7 @@ router.post('/add-movie', async (req, res) => {
   }
 });
 
-router.get('/get-all-movies', async (req, res) => {
+router.get('/get-all-movies', async (_req, res) => {
   try {
     const allMovies = await Movie.find();
     res.send({
