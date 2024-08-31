@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/userModel");
 const bcrypt = require('bcrypt');
+const jwt = require("jsonwebtoken");
+
 
 router.post('/register', async (req, res) => {
   try {
@@ -54,6 +56,10 @@ router.post('/login', async (req, res) => {
       })
       return;
     }
+
+    const token = jwt.sign({ userId: user._id }, "captstone", {
+      expiresIn: "1d",
+    });
 
     res.send({
       success: true,
