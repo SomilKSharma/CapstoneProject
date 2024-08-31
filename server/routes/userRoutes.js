@@ -16,7 +16,6 @@ router.post('/register', async (req, res) => {
       });
       return;
     }
-
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     req.body.password = hashedPassword;
@@ -45,6 +44,7 @@ router.post('/login', async (req, res) => {
         success: false,
         message: "User does not exist"
       })
+      return;
     }
 
     const validPassword = await bcrypt.compare(req.body.password, user.password);
