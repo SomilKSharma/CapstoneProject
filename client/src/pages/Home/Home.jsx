@@ -1,8 +1,8 @@
-import { message, Row, Col } from "antd";
 import { useNavigate } from "react-router-dom";
-import moment from "moment";
+import { message, Row, Col } from "antd";
 import { useEffect, useState } from "react";
 import { getAllMovies } from "../../api/movies";
+import moment from "moment";
 
 function Home() {
   const [movies, setMovies] = useState([]);
