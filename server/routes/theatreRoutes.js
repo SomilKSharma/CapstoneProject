@@ -7,7 +7,7 @@ router.get('/get-all-theatres', async (_req, res) => {
     const allTheatres = await Theatre.find().populate('owner');
     res.send({
       success: true,
-      message: "All theatres fetched!",
+      message: "Theatres fetched!",
       data: allTheatres
     });
   } catch (err) {
