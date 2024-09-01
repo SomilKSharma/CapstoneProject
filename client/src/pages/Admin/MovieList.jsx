@@ -82,7 +82,6 @@ function MovieList() {
         <MovieForm
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
-
         />
       }
       <Table columns={tableHeadings} dataSource={movies} />

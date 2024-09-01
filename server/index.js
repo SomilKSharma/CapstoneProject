@@ -1,8 +1,8 @@
+const theatreRoutes = require('./routes/theatreRoutes');
+const userRoutes = require('./routes/userRoutes');
 const express = require('express');
 const mongoose = require('mongoose');
-const userRoutes = require('./routes/userRoutes');
 const movieRoutes = require('./routes/movieRoutes');
-const theatreRoutes = require('./routes/theatreRoutes');
 const showRoutes = require('./routes/showRoutes');
 
 const app = express();
